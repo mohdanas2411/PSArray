@@ -1,0 +1,13 @@
+class Solution {
+    public int xorOperation(int n, int start) {
+        int re = start;
+       
+       
+            for(int i=2;i<(n*2)-1;i+=2){
+                re = re ^ start+i;
+            } 
+        
+        
+        return re;
+    }
+}
