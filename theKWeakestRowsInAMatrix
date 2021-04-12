@@ -1,0 +1,30 @@
+class Solution {
+    public int[] kWeakestRows(int[][] mat, int k) {
+        
+        int[] re = new int[mat.length];
+        int[] ans = new int[k];
+        for(int i=0;i<mat.length;i++){
+            int x = 0;
+            for(int j=0;j<mat[0].length;j++){
+                if(mat[i][j]==1)
+                    x+=1;
+            }
+            re[i]=x;
+        }
+        for(int i=0;i<k;i++){
+            int min = Integer.MAX_VALUE;
+            int z = 0;
+            for(int j=0;j<re.length;j++){
+              if(re[j]<min && re[j]!=-1){
+                  min = re[j];
+                  z = j;
+              }
+            }
+            ans[i]=z;
+            re[z]=-1;
+            
+        } 
+        return ans;
+        
+    }
+}
