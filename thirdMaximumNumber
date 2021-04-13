@@ -1,0 +1,53 @@
+class Solution {
+    public int thirdMax(int[] nums) {
+        int ans1,ans2,ans3;
+        int flag = 0;
+        ans1=ans2=ans3=Integer.MIN_VALUE;
+        // for(int i=0;i<nums.length;i++){
+        //     if(nums[i]>ans2){
+        //         ans2=nums[i];
+        //     }
+        //     else if(nums[i]>ans3){
+        //         ans3=nums[i];
+        //     }
+        //     if(ans2>ans1){
+        //         int temp = ans2;
+        //         ans2 = ans1;
+        //         ans1 =  temp;
+        //     }
+        //     else if(ans3>ans2){
+        //         int temp = ans3;
+        //         ans3 = ans2;
+        //         ans2 = temp;
+        //     } 
+        //     else if(ans1==ans2){
+        //         ans2=Integer.MIN_VALUE;
+        //     }
+        //     else if(ans3==ans2){
+        //         ans3=Integer.MIN_VALUE;
+        //     }
+        // }
+        
+        for(int i=0;i<nums.length;i++){
+            ans1 = Math.max(ans1,nums[i]);
+        }
+        for(int i=0;i<nums.length;i++){
+            if(ans1!=nums[i]){
+                ans2 = Math.max(ans2,nums[i]);
+            }
+        }
+        for(int i=0;i<nums.length;i++){
+           if(ans2!=nums[i] && ans1!=nums[i]){
+                ans3 = Math.max(ans3,nums[i]);
+               flag=1;
+            }
+        }
+             
+            if(flag==0){
+                return ans1;
+            }else{
+                return ans3;
+            }
+        
+    }
+}
