@@ -1,0 +1,21 @@
+class Solution {
+    public int dominantIndex(int[] nums) {
+        int ans = -1;
+        int sc = -1;
+        int idx = 0;
+        for(int i=0;i<nums.length;i++){
+            if(ans<nums[i]){
+                ans=nums[i];
+                idx = i;
+            }
+            // ans = Math.max(ans,nums[i]);
+        }
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]!=ans)
+                sc = Math.max(sc,nums[i]);
+        }
+        if((ans/2)>=sc)
+            return idx;
+        return -1;
+    }
+}
