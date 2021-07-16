@@ -1,0 +1,27 @@
+public class Solution {
+   
+    public int[] primesum(int A) {
+        
+        boolean[] prime = new boolean[A+1];
+        int[] res = new int[2];
+        ArrayList<Integer> arr = new ArrayList<>();
+        for(int i=2;i*i<=A;i++){
+            if(prime[i]==false){
+                for(int j=i;i*j<=A;j++){
+                    if(prime[i]==false)
+                        arr.add(i);
+                    prime[i*j] = true;
+                }
+            }
+        }
+        if(arr.size()>1){
+          res[0] =   arr.get(arr.size()-1);
+          res[1] = A-res[0];
+        }
+        else{
+            res[0] = arr.get(0);
+            res[1] = arr.get(0);
+        }
+    return res;
+    }
+}
