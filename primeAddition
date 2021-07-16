@@ -1,0 +1,6 @@
+public class Solution {
+    public int solve(int A) {
+        if(A<4) return 1;
+        else return 2;
+    }
+}
