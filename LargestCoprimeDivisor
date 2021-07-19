@@ -1,0 +1,16 @@
+public class Solution {
+    public int cpFact(int A, int B) {
+      while(true){
+            int t = 1;
+            t = gcd(A,B);
+            if(t==1)
+                return A;
+            else
+                A/=t;
+      }
+    }
+    int gcd(int a,int b){
+        if(b==0) return a;
+        return gcd(b,a%b);
+    }
+}
