@@ -1,0 +1,22 @@
+public class Solution {
+    public int getFinal(int A, int B) {
+    // if(A==0 || B==0 || A==B)
+    //     return A+B;
+    // while(true){
+    //     if(A==0 || B==0 || A==B)
+    //         return A+B;
+    //     else if(A<B)
+    //         B=B-A;
+    //     else
+    //         A=A-B;
+    // }
+    // another approach
+    if(A==0 || B==0 || A==B)
+        return A+B;
+    return fun(A,B);
+  }
+  int fun(int a,int b){
+      if(a==0) return 2*b;
+      return fun(b%a,a);
+  }
+}
