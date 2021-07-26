@@ -1,0 +1,23 @@
+public class Solution {
+    public int solve(int A, int B, int C) {
+        //int count = 0;
+        // for(int i=1;i<=A;i++){
+        //     if(i%B==0 && i%C==0)
+        //         count+=1;
+        // }
+        // return count;
+        // other one
+        int max = Math.max(B,C);
+        int min = Math.min(B,C);
+        if(max%min==0)
+            return A/max;
+        else{
+            return A/(((max*min)%1000000007)/gcd(B,C));
+        }
+    }
+    public int gcd(int a,int b){
+        if(a==0) return b;
+        return gcd(b%a,a);
+    }
+    
+}
