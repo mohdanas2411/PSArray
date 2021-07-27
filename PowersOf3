@@ -1,0 +1,20 @@
+public class Solution {
+    public int[] solve(int A) {
+        if(1162261467%A==0) return new int[] {A};
+        ArrayList<Integer> arr = new ArrayList<>();
+        while(A!=0){
+            int sum=0;
+            for(int i=1;i<=A;i*=3)
+                sum = i;
+
+            arr.add(0,sum);
+            A-=sum;
+        }
+        int[] res = new int[arr.size()];
+        for(int i=0;i<arr.size();i++){
+            res[i] = arr.get(i);
+        }
+      
+       return res;
+    }
+}
