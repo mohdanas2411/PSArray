@@ -1,0 +1,13 @@
+public class Solution {
+    public int solve(int A) {
+       if(A<3) return 1;
+       int count = 0;
+
+       for(int k=1;k*k<=2*A;k++){
+           if((A-(k*(k-1))/2)%k==0)
+            count+=1;
+       }
+      
+       return count;
+    }
+}
