@@ -1,0 +1,16 @@
+public class Solution {
+    public int solve(int A) {
+        int n = A-1;
+        long a = 2;
+        long res = 1;
+        while(n!=0){
+            if(n%2==1){
+                res = (res * a) % 1000000007;
+                n-=1;
+            }
+            a = (a * a)% 1000000007;
+            n/=2;
+        }
+        return (int)(res-1);
+    }
+}
