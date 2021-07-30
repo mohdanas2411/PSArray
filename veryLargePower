@@ -1,0 +1,20 @@
+public class Solution {
+    public int solve(int A, int B) {
+        if(A==1) return 1;
+        long power = 1;
+        for(int i = B;i>1;i--){
+            power = (power*i)%1000000006;
+        }
+        long res = 1;
+        long base = A % 1000000007;
+        while(power!=0){
+            if(power%2==1){
+                res = (res * base) % 1000000007;
+                power-=1;
+            }
+            base = (base * base)%1000000007;
+            power/=2;
+        }
+        return (int)res;
+    }
+}
