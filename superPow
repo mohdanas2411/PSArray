@@ -1,0 +1,21 @@
+class Solution {
+    public int superPow(int a, int[] b) {
+        if(a==1) return 1;
+        int power = 0;
+        for(int i : b){
+            power = (power*10 + i) % 1140;
+        }
+       
+        int res = 1;
+            int base = a%1337;
+            while(power!=0){
+                if(power%2==1){
+                    res = (res * base) % 1337;
+                    power-=1;
+                }
+                base = (base * base)%1337;
+                power/=2;
+        }
+        return res;
+    }
+}
