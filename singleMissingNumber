@@ -1,0 +1,10 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+		int xr = 0,cxr = 0;
+        for(int i=0;i<nums.length;i++){
+            xr^=nums[i];
+            cxr^=i+1;
+        }
+        return (xr^=cxr);   
+    }
+}
