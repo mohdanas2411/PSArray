@@ -1,0 +1,9 @@
+class Solution {
+    int getOddOccurrence(int[] arr, int n) {
+        int x = 0;
+        for(int val: arr)
+             x^=val;
+             
+        return x;
+    }
+}
