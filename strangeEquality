@@ -1,0 +1,16 @@
+public class Solution {
+    public int solve(int A) {
+        int x = 0;
+        int y = 0;
+        int temp = A;
+        int cnt=0;
+       while(temp>0){
+           temp/=2;
+           cnt++;
+       }
+        y=(1<<cnt);
+    
+        x=(y-1)-A;
+       return (x^y);
+    }
+}
