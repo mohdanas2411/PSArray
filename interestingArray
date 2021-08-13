@@ -1,0 +1,16 @@
+public class Solution {
+    public String solve(int[] A) {
+        int x = 0;
+        for(int i = 0;i<A.length;i++){
+           x^=A[i];
+        }
+        int num1 = x/2;
+        int num2 = x-num1;
+           
+        if((num1^num2)==0)
+            return "Yes";
+        
+        
+        return "No";
+    }
+}
