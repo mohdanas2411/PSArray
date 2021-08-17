@@ -1,0 +1,20 @@
+
+public class Solution {
+    public int pow(int A, int B, int C) {
+      long ans = 1;
+      long pow = A;
+
+      while(B>0){
+          if((B&1)>0){
+              ans*=pow;
+              ans%=C;
+          }
+          pow = pow*pow;
+          pow%=C;
+          B = B>>1;
+      }
+      if((ans)<0)
+            return (int)((ans+C)%C);
+      return (int)(ans%C);
+    }
+}
