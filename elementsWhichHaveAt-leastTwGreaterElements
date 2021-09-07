@@ -1,0 +1,25 @@
+public class Solution {
+    public int[] solve(int[] A) {
+    
+        int[] res = new int[A.length-2];
+        int m1,m2;
+        
+        m1 = Math.max(A[0],A[1]);
+        m2 = Math.min(A[0],A[1]);
+        
+        for(int i = 2;i<A.length;i++){
+            if(A[i]>m1){
+                m2 = m1;
+                m1 = A[i];
+            }
+            else if(A[i]>m2)
+                m2 = A[i];
+        }
+        int k = -1;
+        for(int i = 0;i<A.length;i++){
+            if(A[i] != m1 && A[i] != m2)
+                res[++k] = A[i];
+        }
+        return res;
+    }
+}
