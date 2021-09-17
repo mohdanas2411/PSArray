@@ -1,0 +1,25 @@
+public class Solution {
+    int mod = 1000000007;
+    public int solve(int[] A) {
+        long min_sum=0,max_sum=0,ans=0;
+        Arrays.sort(A);
+        for(int i = 0;i<A.length;i++){
+            ans += (pow(2,i) - pow(2,A.length-i-1)) * A[i];
+            ans%= 1000000007;
+        }
+        return (int)ans;
+    }
+    public long pow(long x,long n){
+        long res = 1;
+        while(n>0){
+            if(n%2==1){
+                res = (res * x) % mod;
+                n--;
+            }
+            n >>= 1; 
+            x = (x*x) % mod;
+        }
+        return res;
+        
+    }
+}
