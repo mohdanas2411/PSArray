@@ -1,0 +1,38 @@
+public class Solution {
+    public int[] subUnsort(int[] A) {
+       int st = -1,end = -1;
+       boolean flag;
+       for(int i = 0;i<A.length-1;i++){
+           if(A[i] > A[i+1]){
+               st = i;
+               break;
+           }
+       }
+       if(st == -1)
+            return new int[] {-1};
+            
+       for(int i = A.length-2;i>=0;i--){
+           if(A[i] > A[i+1]){
+               end = i+1;
+               break;
+           }
+       }
+       int minV = Integer.MAX_VALUE;
+       int maxV = Integer.MIN_VALUE;
+       while(st<=end){
+            minV = Math.min(minV,A[st]);
+            maxV = Math.max(maxV,A[st]);
+            st++;
+        }
+        int l = 0;
+        while(A[l] <= minV){
+            l++;
+        }
+        int h = A.length-1;
+        while(A[h] >= maxV){
+            h--;
+        }
+
+        return new int[] {l,h};
+    }
+}
