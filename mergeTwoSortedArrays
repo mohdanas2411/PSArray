@@ -1,0 +1,24 @@
+public class Solution {
+    public int[] solve(final int[] A, final int[] B) {
+        int[] res = new int[A.length+B.length];
+        int k = 0;
+        int j = 0;
+        int i= 0;
+        while(j<A.length && k<B.length){
+            if(A[j] <= B[k])
+                res[i++] = A[j++];
+            else
+                res[i++] = B[k++];
+        }
+        if(j<A.length){
+           while(j<A.length){
+                res[i++] = A[j++]; 
+           }
+           return res;
+        }
+        while(k<B.length){
+                res[i++] = B[k++]; 
+        }
+        return res;
+    }
+}
